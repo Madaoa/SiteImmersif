@@ -1,0 +1,53 @@
+@media all and (max-width:991px){
+	.Rendu{
+
+		/* CAR LE SVG PARTAIT EN CACAHUETES  */
+		#formeBizarre{
+			right: -500px;
+			top: -200px;
+			transition: 0.5s;
+			height: 200px;
+		}
+
+	}
+
+
+	/* RESTRUCTURATION DU FORM */
+	.Contact{
+		min-height: 650px;
+
+		.nom{
+			top:75px;
+
+		}
+
+		.mail{
+			top:150px;
+
+		}
+		.msg{
+			top:225px;
+		}
+		.submit{
+			top: 540px;
+			right: 0;
+		}
+
+	}
+}
+
+
+
+@media all and (max-width:640px){
+	.Rendu{
+
+		/* La on peut rien faire..  donc on le cache*/
+		#formeBizarre{
+			display: none
+		}
+
+	}
+
+
+
+}

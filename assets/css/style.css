@@ -1,0 +1,486 @@
+@charset "UTF-8";
+/* FICHIER RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, .SVG xmp, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* MON FICHIER CSS PRINCIPAL */
+/* *********** */
+/* DEBUT VARIABLES */
+/* *********** */
+/* *********** */
+/* FIN VARIABLES */
+/* *********** */
+/* *********** */
+/* DEBUT KEYFRAMES */
+/* *********** */
+@keyframes clign {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.8; }
+  100% {
+    opacity: 1; } }
+@keyframes pulse {
+  0%,100% {
+    transform: translate(0); }
+  40% {
+    transform: translate(-1px, -1px); }
+  60% {
+    transform: translate(1px, 1px); }
+  80% {
+    transform: translate(2px, -2px); } }
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+@keyframes slideOut {
+  0% {
+    transform: translateY(0px);
+    opacity: 0; }
+  100% {
+    transform: translateY(-50px);
+    opacity: 1; } }
+/* *********** */
+/* FIN KEYFRAMES */
+/* *********** */
+/* *********** */
+/* DEBUT MAIN (attributs généraux en gros) */
+/* *********** */
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1em;
+  color: #000; }
+
+/* AFIN D'AVOIR DU LATO THIN */
+p, .SVG xmp {
+  font-weight: 300; }
+
+/* BACKGROUD BLEU */
+.bluebgc, .Transition, .SVG {
+  background-color: #1ba1e2;
+  color: white; }
+
+/* MORCEAU DE CODE */
+.excerpt {
+  background-color: #333333;
+  color: #fff;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  min-height: 210px;
+  margin-bottom: 60px;
+  transition: 2s;
+  animation: clign 3s infinite; }
+
+.excerpt:hover {
+  background-color: black;
+  color: #fff;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  min-height: 210px;
+  margin-bottom: 60px;
+  transition: 0.5s;
+  animation: none; }
+
+/* AFIN D'ALIGNER VERTICALEMENT,
+LE FLEX C'EST SURTOUT SYMPA POUR CA */
+.vertical-center {
+  display: flex;
+  align-items: center; }
+
+/* POUR METTRE EN VALEUR UN MORCEAU DE PHRASE */
+strong {
+  font-weight: 600; }
+
+/* INDENTATION DE NIVEAU 1 */
+.i1 {
+  margin-left: 20px; }
+
+/* INDENTATION DE NIVEAU 2 */
+.i2 {
+  margin-left: 40px; }
+
+/* *********** */
+/* FIN MAIN */
+/* *********** */
+/* *********** */
+/* DEBUT MENU1 */
+/* *********** */
+.Menu {
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999; }
+  .Menu .menu-logo {
+    height: 40px;
+    margin-top: 5px; }
+  .Menu ul {
+    margin-left: 20px; }
+  .Menu li {
+    display: inline-block;
+    padding: 15px; }
+    .Menu li a {
+      color: black; }
+    .Menu li a:hover {
+      text-decoration: none;
+      border-bottom: 1px solid #1ba1e2; }
+
+/* *********** */
+/* FIN MENU1 */
+/* *********** */
+/* *********** */
+/* DEBUT MENU2 - INVISIBLE AVANT SCROLLTOP */
+/* *********** */
+.Menu2 {
+  height: 50px;
+  background-color: white;
+  position: absolute;
+  top: -50px;
+  width: 100%;
+  z-index: 999;
+  transition: 0.5s;
+  animation: slideOut 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .Menu2 .menu-logo {
+    height: 40px;
+    margin-top: 5px; }
+  .Menu2 ul {
+    margin-left: 20px; }
+  .Menu2 li {
+    display: inline-block;
+    padding: 15px; }
+    .Menu2 li a {
+      color: black; }
+    .Menu2 li a:hover {
+      text-decoration: none;
+      border-bottom: 1px solid #1ba1e2; }
+  .Menu2 .fleche {
+    height: 15px;
+    fill: #1ba1e2; }
+
+/* *********** */
+/* FIN MENU2 */
+/* *********** */
+/* VOIR LE FICHIER FUNCTIONS.JS DANS LE DOSSIER JS */
+.goToTop {
+  position: fixed;
+  top: 0;
+  height: 50px;
+  z-index: 1;
+  /* De nouveau visible ! */
+  animation: slideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+.goToTop2 {
+  position: fixed;
+  top: -50px;
+  height: 50px;
+  z-index: 1;
+  /* De nouveau visible ! */
+  animation: slideOut 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+/* *********** */
+/* DEBUT HOME */
+/* *********** */
+#Home {
+  min-height: 100vh;
+  background-image: url("../img/typewriter.jpg");
+  background-size: cover;
+  /* Sur la maquette, la luminosité est augmentée donc.. */
+  -webkit-filter: brightness(1.2);
+  filter: brightness(1.2); }
+  #Home h1 {
+    font-size: 4em;
+    font-weight: 800;
+    margin-bottom: 50px; }
+  #Home h2 {
+    font-size: 2.4em;
+    font-weight: 500;
+    margin-bottom: 30px; }
+  #Home h3 {
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 30px; }
+  #Home .initial, #Home .final {
+    position: absolute;
+    top: 5px;
+    left: 40px; }
+  #Home .final {
+    opacity: 0;
+    top: 10px;
+    left: 30px; }
+  #Home a {
+    height: 50px;
+    width: 200px;
+    border: 1px solid #1ba1e2;
+    border-radius: 0px;
+    font-weight: 600;
+    color: black;
+    font-size: 1.2em;
+    line-height: 20px;
+    transition: 2s;
+    animation: pulse 0.4s linear infinite; }
+  #Home a:hover {
+    transition: 0.5s;
+    background-color: #ff0097;
+    border: 1px solid #1ba1e2; }
+  #Home a:hover .initial {
+    transition: 0.5s;
+    opacity: 0; }
+  #Home a:hover .final {
+    transition: 0.5s;
+    opacity: 1; }
+
+/* *********** */
+/* FIN HOME */
+/* *********** */
+/* *********** */
+/* DEBUT TRANSITION */
+/* *********** */
+.Transition h2 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 3em;
+  font-weight: 800; }
+
+/* *********** */
+/* FIN TRANSITION */
+/* *********** */
+/* *********** */
+/* DEBUT KEYFRAMES */
+/* *********** */
+.Keyframes h2 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 3em;
+  font-weight: 800; }
+
+.SVG h2 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 3em;
+  font-weight: 800; }
+.SVG xmp {
+  display: inline-block;
+  font-family: inherit;
+  white-space: inherit;
+  margin-bottom: 5px; }
+
+.Rendu {
+  min-height: 500px;
+  position: relative;
+  background-image: url(../img/rendu.jpg);
+  background-size: cover;
+  background-position: center center; }
+  .Rendu h2 {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 3em;
+    font-weight: 800; }
+  .Rendu ul {
+    list-style-type: disc;
+    margin-bottom: 20px;
+    margin-left: 40px; }
+  .Rendu li {
+    color: #ff0097; }
+  .Rendu ul > li > span {
+    color: #000;
+    font-weight: 300; }
+  .Rendu em {
+    font-weight: 700;
+    text-decoration: underline; }
+  .Rendu #formeBizarre {
+    position: absolute;
+    margin: auto;
+    position: absolute;
+    top: 500px;
+    left: 60px;
+    bottom: 0;
+    right: 0;
+    transition: 0.5s; }
+  .Rendu #formeBizarre:hover {
+    left: 80px;
+    transition: 0.5s;
+    transform: scale(0.9) rotate(10deg); }
+
+/* *********** */
+/* FIN KEYFRAMES */
+/* *********** */
+/* *********** */
+/* DEBUT CONTACT */
+/* *********** */
+.Contact {
+  min-height: 550px;
+  background-image: url("../img/contact.jpg");
+  background-size: cover;
+  background-position: center center;
+  /* Sur la maquette, la luminosité est augmentée donc.. */
+  -webkit-filter: brightness(1.1);
+  filter: brightness(1.1); }
+  .Contact h2 {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 3em;
+    font-weight: 800; }
+  .Contact fieldset {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+    padding: 0;
+    border: 0;
+    margin-top: 50px;
+    color: black;
+    transition: 400ms linear all; }
+  .Contact .form-label, .Contact .form-input, .Contact .form-label2, .Contact .form-input-fat {
+    text-align: left;
+    width: 100%;
+    height: 30px;
+    padding-left: 5px;
+    position: absolute;
+    z-index: 100;
+    transition: 400ms linear all;
+    color: grey; }
+  .Contact .mail {
+    top: 75px; }
+  .Contact .msg {
+    top: 150px; }
+  .Contact .form-input-fat {
+    height: 100px; }
+  .Contact .submit {
+    position: absolute;
+    top: 440px;
+    right: -125px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #ff0097;
+    border-radius: 0px;
+    color: black;
+    font-size: 1.2em;
+    line-height: 20px;
+    background-color: transparent;
+    transition: 0.5s; }
+  .Contact .submit:hover {
+    background-color: #1ba1e2;
+    border: 1px solid #ff0097;
+    color: white;
+    transition: 0.5s; }
+  .Contact .form-input:focus + .form-label {
+    color: #ff0097;
+    transform: translateY(-23px) translateX(-20px) scale(0.9);
+    transition: 400ms linear all; }
+  .Contact .form-input:focus + .form-label2 {
+    color: #ff0097;
+    transform: translateY(-23px) translateX(-40px) scale(0.9);
+    transition: 400ms linear all; }
+  .Contact .form-input-fat:focus + .form-label2 {
+    color: #ff0097;
+    transform: translateY(-23px) translateX(-40px) scale(0.9);
+    transition: 400ms linear all; }
+
+/* *********** */
+/* FIN CONTACT */
+/* *********** */
+/* *********** */
+/* DEBUT FOOTER */
+/* *********** */
+.footer {
+  background-color: #333333;
+  min-height: 60px;
+  color: white; }
+  .footer p, .footer .SVG xmp, .SVG .footer xmp {
+    margin-top: 18px;
+    font-weight: 500; }
+  .footer .iim {
+    height: 50px;
+    margin-top: 5px; }
+  .footer .logo {
+    height: 40px;
+    margin-top: 10px; }
+
+/* *********** */
+/* FIN FOOTER */
+/* *********** */
+/* MES MEDIAS QUERIES */
+@media all and (max-width: 991px) {
+  .Rendu {
+    /* CAR LE SVG PARTAIT EN CACAHUETES  */ }
+    .Rendu #formeBizarre {
+      right: -500px;
+      top: -200px;
+      transition: 0.5s;
+      height: 200px; }
+
+  /* RESTRUCTURATION DU FORM */
+  .Contact {
+    min-height: 650px; }
+    .Contact .nom {
+      top: 75px; }
+    .Contact .mail {
+      top: 150px; }
+    .Contact .msg {
+      top: 225px; }
+    .Contact .submit {
+      top: 540px;
+      right: 0; } }
+@media all and (max-width: 640px) {
+  .Rendu {
+    /* La on peut rien faire..  donc on le cache*/ }
+    .Rendu #formeBizarre {
+      display: none; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,28 @@
+@media all and (max-width: 991px) {
+  .Rendu {
+    /* CAR LE SVG PARTAIT EN CACAHUETES  */ }
+    .Rendu #formeBizarre {
+      right: -500px;
+      top: -200px;
+      transition: 0.5s;
+      height: 200px; }
+
+  /* RESTRUCTURATION DU FORM */
+  .Contact {
+    min-height: 650px; }
+    .Contact .nom {
+      top: 75px; }
+    .Contact .mail {
+      top: 150px; }
+    .Contact .msg {
+      top: 225px; }
+    .Contact .submit {
+      top: 540px;
+      right: 0; } }
+@media all and (max-width: 640px) {
+  .Rendu {
+    /* La on peut rien faire..  donc on le cache*/ }
+    .Rendu #formeBizarre {
+      display: none; } }
+
+/*# sourceMappingURL=responsive.css.map */
